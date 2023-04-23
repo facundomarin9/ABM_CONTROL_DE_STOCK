@@ -1,0 +1,25 @@
+package com.alura.jdbc.pruebas;
+
+import java.security.PublicKey;
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import com.alura.jdbc.factory.ConnectionFactory;
+
+public class PruebaPoolDeConecciones {
+
+	public static void main(String[] args) throws SQLException {
+
+		ConnectionFactory connectionFactory = new ConnectionFactory();
+
+		for (int i = 0; i < 20; i++) {
+
+			Connection conexion = connectionFactory.recoveryConnection();
+
+			System.out.println("Abriendo la conexion de numero " + (i + 1));
+
+		}
+
+	}
+
+}
